@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Banquet</title>
+    <style>
+        
+ 
+/* Logo Styling (Optional) */
+nav .logo {
+    height: 40px; /* Adjust the logo size */
+    width: auto; /* Keep aspect ratio */
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    nav {
+        height: 40px; /* Smaller navbar height for mobile */
+        padding: 3px 15px;
+    }
+    nav a {
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+}
+        #services {
+            padding: -60px;
+            text-align: center; /* Centers all text and content within the #services section */
+            margin: 45px  ; /* Adds vertical spacing around the section */
+        }
+        
+        .centered-list {
+            display: inline-block; /* Centers the list as an inline element */
+            text-align: center; /* Ensures the text inside list items is aligned to the left */
+            padding: 1; /* Removes default padding */
+            list-style: none; /* Removes default bullet points */
+        }
+        
+        .centered-list li {
+            margin-bottom: 15px; /* Adds spacing between each list item */
+        }
+        
+        .centered-list li strong {
+            color: #444; /* Highlights the bold section with a darker shade */
+            font-size: 20px; /* Slightly increases the font size for emphasis */
+        }
+        #about {
+            text-align: center; /* Centers all text and content within the #about section */
+        }
+        
+        .centered-list {
+            display: inline-block; /* Makes the list behave like an inline element */
+            text-align: center; /* Aligns the text inside the list items to the left */
+            padding: 0; /* Removes default padding */
+            list-style: none; /* Removes default bullet points */
+        }
+        
+        .centered-list li {
+            margin-bottom: 10px; /* Adds spacing between each list item */
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+            background: #f9f9f9; /* Light background for the form */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        form label {
+            margin: 0.5rem 0 0.25rem;
+            font-weight: bold;
+        }
+        
+        form input, form select, form textarea, form button {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        form input:focus, form select:focus, form textarea:focus {
+            outline: none;
+            border-color: goldenrod;
+            box-shadow: 0 0 5px goldenrod;
+        }
+        
+        form button {
+            background: goldenrod;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.75rem;
+            transition: background 0.3s;
+        }
+        
+        form button:hover {
+            background: darkgoldenrod;
+        }
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+
+        /* Navigation */
+        nav {
+            background: #DCDCDC; /* Background set to light gray */
+            color: #333; /* Text color adjusted for contrast */
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for clarity */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav a {
+            color: #333; /* Updated link color for visibility on light gray */
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logo Section */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px; /* Increased the size of the logo */
+            margin-right: 2rem; /* Add some space between the logo and text */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Add padding to the body to prevent content from hiding under the fixed nav */
+        body {
+            padding-top: 75px; /* Adjust to the height of the navigation bar */
+
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('9.jpeg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: goldenrod;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: darkgoldenrod;
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 30%;
+            border-radius: 10px;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        form label {
+            margin: 0.5rem 0;
+        }
+
+        form input, form textarea, form button {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: goldenrod;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 1s;
+        }
+
+        form button:hover {
+            background: darkgoldenrod;
+        }
+
+        /* Footer */
+        footer {
+            background: #DCDCDC;
+                    /* General Reset */
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                        font-family: Arial, sans-serif;
+                    }
+        body {
+            line-height: 1.6;
+            color: #FFFFFF;
+        }
+
+        /* Navigation */
+        section {
+            background-image: url('8.jpeg'); /* Replace with the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            padding: 0;
+        }nav {
+            margin: 0;
+            padding: 0;
+        }nav {
+            background: rgba(255, 255, 255, 0.8); /* Light transparency */
+        }section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh; /* Ensure the section occupies full height */
+            color: #fff; /* Ensure text contrasts well with the background */
+        }
+        nav {
+            background: #FFFFFF;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 5px #FFFFFF(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .cta-button {
+            background: goldenrod;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        }f
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="#">
+                <img src="iRp8GFm0RoGMgp0WEAafYw.webp" alt="Golden Banquet Logo">
+            </a>
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+      <style>
+        #hero {
+            background-image: url('11.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            padding: 2rem;
+            border-radius: 10px;
+        }
+    </style>
+    <section id="hero">
+        <div class="overlay">
+            <h1>Golden Banquet</h1>
+            <p>Creating unforgettable memories for your special moments.</p>
+            <a href="#contact" class="cta-button" id="bookNow">Book Now</a>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about">
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Golden Banquet, we specialize in creating unforgettable memories for your most cherished moments. As a premier venue for weddings, corporate events, and celebrations, we take pride in offering a perfect blend of luxury, elegance, and exceptional service.
+
+                Our mission is to turn your dreams into reality, whether it’s a grand wedding, a professional conference, or a special celebration. With our meticulously designed spaces, world-class amenities, and a dedicated team of professionals, we ensure that every detail of your event is flawlessly executed.</p>
+            
+            <ul class="centered-list">
+                <li><strong>Timeless Elegance:</strong> Our venue boasts exquisite interiors and versatile layouts, perfectly suited to accommodate any theme or occasion.</li>
+                <li><strong>Culinary Excellence:</strong> From curated gourmet menus to live culinary experiences, our master chefs craft bespoke dining options tailored to your preferences.</li>
+                <li><strong>Exceptional Services:</strong> Our experienced event coordinators are committed to delivering personalized assistance, ensuring a stress-free and flawlessly executed event.</li>
+                <li><strong>Prime Location:</strong> Strategically located, Golden Banquet offers convenient accessibility for guests while providing a serene and luxurious ambiance.</li>
+            </ul>
+        </section>
+                       
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>At Golden Banquet, we offer a comprehensive range of services designed to make your events truly exceptional.</p>
+        
+        <ul class="centered-list">
+            <li><strong>Event Planning:</strong> From concept to execution, our dedicated planners bring your vision to life with precision and creativity.</li>
+            <li><strong>Customized Décor:</strong> Tailored décor solutions that reflect your unique style and elevate your event’s ambiance.</li>
+            <li><strong>Gourmet Catering:</strong> World-class culinary offerings crafted by our expert chefs, tailored to suit your preferences and dietary needs.</li>
+            <li><strong>Entertainment Arrangements:</strong> Whether live music, DJs, or performers, we ensure the entertainment is unforgettable.</li>
+            <li><strong>State-of-the-Art Facilities:</strong> Equipped with modern amenities, including audio-visual equipment and high-speed connectivity, ideal for any occasion.</li>
+        </ul>
+    </section>
+ <!-- Gallery Section -->
+ <style>
+    /* Style for the gallery section */
+    #gallery {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    #gallery h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    #gallery p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #666;
+    }
+
+    /* Flexbox gallery */
+    .gallery-grid {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping to the next row */
+        justify-content: center;
+        gap: 1rem; /* Space between boxes */
+    }
+
+    .gallery-box {
+        width: 300px;
+        height: 200px;
+        background-color: #ddd;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .gallery-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the box */
+    }
+
+    .gallery-box:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover effect */
+        transition: 0.3s;
+    }
+</style>
+ <section id="gallery">
+    <h2>Gallery</h2>
+    <p>Take a look at our beautiful venue setups.</p>
+
+    <!-- Image boxes -->
+    <div class="gallery-grid">
+        <div class="gallery-box">
+            <img src="11.png" alt="Venue Setup 1">
+        </div>
+        <div class="gallery-box">
+            <img src="0.jpeg" alt="Venue Setup 2">
+        </div>
+        <div class="gallery-box">
+            <img src="9.jpeg" alt="Venue Setup 3">
+        </div>
+        <div class="gallery-box">
+            <img src="8.jpeg" alt="Venue Setup 4">
+        </div>
+        <div class="gallery-box">
+            <img src="7.jpeg" alt="Venue Setup 5">
+        </div>
+    </div>
+</section>
+   <!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out to us for bookings and inquiries.</p>
+    
+    <!-- Booking Form -->
+    <form action="data.php" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    
+        <label for="phone">Phone</label>
+        <input type="number" id="number" name="phone" placeholder="Enter your phone number" required>
+    
+        <label for="event">Event Type</label>
+        <select id="event" name="event" required>
+            <option value="" disabled selected>Select your event type</option>
+            <option value="wedding">Wedding</option>
+            <option value="birthday">Birthday</option>
+            <option value="corporate">Corporate Event</option>
+            <option value="other">Other</option>
+        </select>
+    
+        <label for="date">Event Date</label>
+        <input type="date" id="date" name="date" required>
+    
+        <label for="message">Additional Details</label>
+        <textarea id="message" name="message" rows="4" placeholder="Enter any additional details"></textarea>
+    
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+  <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>© 2024 Golden Banquet. All rights reserved.</p>
+        <div class="contact-details">
+            <p><strong>Contact Us:</strong></p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <p>Email: <a href="mailto:info@goldenbanquet.com">info@goldenbanquet.com</a></p>
+            <p>Address: 123 Golden Street, Banquet City, Country</p>
+        </div>
+    </div>
+</footer>
+    <script>
+        // Add event listener to the logo
+document.querySelector('.logo a').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default behavior
+    smoothScroll('body', 2000); // Scroll to the top of the page
+});
+        // Smooth scrolling function
+        function smoothScroll(target, duration) {
+            const targetElement = document.querySelector(target);
+            const targetPosition = targetElement.offsetTop;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function animationScroll(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = ease(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animationScroll);
+            }
+
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return (c / 2) * t * t + b;
+                t--;
+                return (-c / 2) * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animationScroll);
+        }
+
+        // Add event listeners to all navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                smoothScroll(targetId, 2000); // Smooth scroll with 2 seconds duration
+            });
+        });
+
+        // Add smooth scrolling to the "Book Now" button
+        document.querySelector('#bookNow').addEventListener('click', function (e) {
+            e.preventDefault();
+            smoothScroll('#contact', 2000); // Smooth scroll with 2 seconds duration
+        });
+    </script>
+    <script>const database = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '', // Your MySQL password
+        database: 'golden_banquet'
+    });
+    
+    db.connect(err => {
+        if (err) {
+            console.error('Error connecting to the database:', err);
+            return;
+        }
+        console.log('Connected to the database.');
+    });
+</script>
+<script>app.post('/contact', (req, res) => {
+    const { name, email, phone, event, date, message } = req.body;
+    const sql = 'INSERT INTO bookings (name, email, phone, event, date, message) VALUES (?, ?, ?, ?, ?, ?)';
+    db.query(sql, [name, email, phone, event, date, message], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error saving data.');
+        } else {
+            res.status(200).send('Booking saved successfully!');
+        }
+    });
+});
+</script>
+<script>// server.js (or database.js)
+    const mysql = require('mysql');
+    
+    // Create a MySQL connection
+    const db = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '', // Your MySQL password (replace with your actual password)
+        database: 'golden_banquet' // The database name you're working with
+    });
+    
+    // Connect to the MySQL database
+    db.connect((err) => {
+        if (err) {
+            console.error('Error connecting to the database:', err);
+            return;
+        }
+        console.log('Connected to the database.');
+    });</script>
+    <script>const express = require('express');
+        const mysql = require('mysql2');
+        
+        const app = express();
+        const port = 3000;
+        
+        // MySQL connection setup
+        const darabase = mysql.createConnection(
+            {
+          host: 'localhost',
+          user: 'root',
+          password: '', // Your MySQL password
+          database: 'golden_banquet',
+        });
+        
+        db.connect(err => {
+          if (err) {
+            console.error('Error connecting to the database:', err);
+            return;
+          }
+          console.log('Connected to the database.');
+        });
+        
+        // Serve your static HTML file (frontend)
+        app.use(express.static('public')); // Assuming your HTML files are in the 'public' folder
+        
+        // Example of an API route that interacts with the database
+        app.get('/events', (req, res) => {
+          db.query('SELECT * FROM events', (err, results) => {
+            if (err) {
+              res.status(500).json({ error: 'Database error' });
+            } else {
+              res.json(results);
+            }
+          });
+        });
+        
+        // Start the server
+        app.listen(port, () => {
+          console.log(`Server running at http://localhost:${port}`);
+        });</script>
+        <script>const mysql = require('mysql');
+
+            // Create connection
+            const connection = mysql.createConnection({
+              host: 'localhost',
+              user: 'username',
+              password: 'password',
+              database: 'database_name'
+            });
+            
+            // Connect to the database
+            connection.connect((err) => {
+              if (err) {
+                console.error('Error connecting: ' + err.stack);
+                return;
+              }
+              console.log('Connected as id ' + connection.threadId);
+            });
+            
+            // Query the table
+            connection.query('SELECT * FROM table_name', (err, results, fields) => {
+              if (err) throw err;
+              console.log(results);
+            });
+            
+            // Close the connection
+            connection.end();</script>
+</body>
+</html>
